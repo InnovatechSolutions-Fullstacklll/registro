@@ -2,12 +2,13 @@ package com.Inovatech.ms_register.controller;
 
 import com.Inovatech.ms_register.dto.RegisterRequest;
 import com.Inovatech.ms_register.dto.RegisterResponse;
+import com.Inovatech.ms_register.entity.User;
+import com.Inovatech.ms_register.repository.UserRepository;
 import com.Inovatech.ms_register.service.RegisterService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/register")
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class RegisterController {
 
     private final RegisterService registerService;
+    private final UserRepository userRepository;
 
     @PostMapping
     public RegisterResponse register(
@@ -22,5 +24,9 @@ public class RegisterController {
     ) {
 
         return registerService.register(request);
+    }
+    @GetMapping("/users")
+    public List<User> getUsers() {
+        return userRepository.findAll();
     }
 }
