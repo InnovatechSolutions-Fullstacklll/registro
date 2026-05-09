@@ -3,7 +3,6 @@ package com.Inovatech.ms_register.controller;
 import com.Inovatech.ms_register.dto.RegisterRequest;
 import com.Inovatech.ms_register.dto.RegisterResponse;
 import com.Inovatech.ms_register.service.RegisterService;
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,8 +18,9 @@ public class RegisterController {
 
     @PostMapping
     public RegisterResponse register(
-            @Valid @RequestBody RegisterRequest request
+            @RequestBody RegisterRequest request
     ) {
+
         return registerService.register(request);
     }
 }
