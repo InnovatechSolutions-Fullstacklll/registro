@@ -27,7 +27,7 @@ public class RegisterControllerTest {
 
         RegisterRequest request = new RegisterRequest();
         request.setEmail("test@test.com");
-        request.setPassword("123456");
+        request.setClave1("123456");
 
         mockMvc.perform(post("/api/register")
                         .contentType(MediaType.APPLICATION_JSON)

@@ -14,12 +14,15 @@ import lombok.Setter;
 public class RegisterRequest {
 
     @NotBlank(message = "Usuario obligatorio")
-    private String username;
+    private String nombre;
 
     @Email(message = "Email inválido")
     @NotBlank(message = "Email es obligatorio")
     private String email;
 
-    @NotBlank(message = "Contraseña obligatorio")
-    private String password;
+    @NotBlank(message = "Contraseña obligatoria")
+    private String clave1;
+
+    @NotBlank(message = "Complete 2 veces la contraseña")
+    private String clave2;
 }

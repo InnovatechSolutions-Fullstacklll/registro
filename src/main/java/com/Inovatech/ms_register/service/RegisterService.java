@@ -25,12 +25,16 @@ public class RegisterService {
                     .build();
         }
 
+        if(!request.getClave1().equals(request.getClave2())){
+            return RegisterResponse.builder().message("Las contraseñas no coinciden").build();
+        }
+
         User user = User.builder()
-                .username(request.getUsername())
+                .nombre(request.getNombre())
                 .email(request.getEmail())
-                .password(
+                .clave1(
                         passwordEncoder.encode(
-                                request.getPassword()
+                                request.getClave1()
                         )
                 )
                 .build();
