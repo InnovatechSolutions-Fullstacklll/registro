@@ -112,14 +112,12 @@
 			<version>0.12.5</version>
 			<scope>runtime</scope>
 		</dependency>
-
 	</dependencies>
 
 	<!--spring cloud-->
 
 	<dependencyManagement>
 		<dependencies>
-
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
@@ -127,7 +125,6 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
 		</dependencies>
 	</dependencyManagement>
 

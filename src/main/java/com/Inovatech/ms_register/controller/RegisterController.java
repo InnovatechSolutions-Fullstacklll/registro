@@ -18,14 +18,14 @@ public class RegisterController {
     private final RegisterService registerService;
     private final UserRepository userRepository;
 
-    @PostMapping
+    @PostMapping("/user")
     public RegisterResponse register(
             @RequestBody RegisterRequest request
     ) {
-
+        System.out.println("Register request: " + request);
         return registerService.register(request);
     }
-    @GetMapping("/users")
+    @GetMapping("/user")
     public List<User> getUsers() {
         return userRepository.findAll();
     }
